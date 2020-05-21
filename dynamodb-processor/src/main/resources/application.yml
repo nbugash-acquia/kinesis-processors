@@ -1,0 +1,30 @@
+spring:
+  main:
+    web-application-type: none
+  cloud:
+    stream:
+      kinesis:
+        bindings:
+          input:
+            consumer:
+              shardIteratorType: TRIM_HORIZON
+      function:
+        bindings:
+          input:
+            destination: # Kinesis In stream
+            content-type: text/plain
+          output:
+            destination: # Kinesis Out stream
+            content-type: text/plain
+cloud:
+  aws:
+    credentials:
+      accesskey: # ACCESS KEY
+      secretkey: # SECRET KEY
+    region:
+      static: us-west-2
+    stack:
+      auto: false
+logging:
+  level:
+    io.nbugash.titan: DEBUG

@@ -1,0 +1,23 @@
+
+spring:
+  cloud:
+    stream:
+      function:
+        bindings:
+          output:
+            destination: # Kinesis Out stream
+            content-type: text/plain
+cloud:
+  aws:
+    credentials:
+      accesskey: # ACCESS KEY
+      secretkey: # SECRET KEY
+    region:
+      static: us-west-2
+    stack:
+      auto: false
+logging:
+  level:
+    io.nbugash.titan: DEBUG
+server:
+  port: 9000
