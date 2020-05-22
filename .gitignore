@@ -196,3 +196,8 @@ $RECYCLE.BIN/
 
 # Visual Studio Code
 .vscode
+
+# Titan Custom folder and files to ignore
+infra/.terraform
+!./infra/terraform.tfstate
+!./infra/terraform.tfstate.backup
