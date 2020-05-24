@@ -7,7 +7,7 @@
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
     <version>2.3.0.RELEASE</version>
-    <relativePath/> <!-- lookup parent from repository -->
+    <relativePath/> <!-- lookup parent from io.nbugash.titan.core.repository -->
   </parent>
 
   <groupId>io.nbugash</groupId>
@@ -25,6 +25,7 @@
     <module>api</module>
     <module>s3-processor</module>
     <module>dynamodb-processor</module>
+    <module>redshift-processor</module>
     <module>core</module>
   </modules>
 

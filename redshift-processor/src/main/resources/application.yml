@@ -11,13 +11,13 @@ spring:
               shardIteratorType: LATEST
       bindings:
         input:
-          destination: dynamodb
-          content-type: application/json
-        output:
-          destination: s3
-          content-type: application/json
+          destination: redshift
+          content-type: text/plain
 cloud:
   aws:
+    s3:
+      bucket:
+        name: titan-s3-bucket
     credentials:
       accesskey: ${AWS_ACCESS_KEY}
       secretkey: ${AWS_SECRET_KEY}
@@ -29,8 +29,3 @@ cloud:
 logging:
   level:
     io.nbugash.titan: DEBUG
-application:
-  dynamodb:
-    endpoint: https://dynamodb.${cloud.aws.region.static}.amazonaws.com
-    table:
-      name: io.nbugash.titan.captures

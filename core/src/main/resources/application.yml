@@ -1,0 +1,5 @@
+
+cloud:
+  aws:
+    s3:
+      datetime-pattern: yyyy-MM-dd
