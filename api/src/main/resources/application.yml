@@ -2,16 +2,16 @@
 spring:
   cloud:
     stream:
-      function:
-        bindings:
-          output:
-            destination: # Kinesis Out stream
-            content-type: text/plain
+      bindings:
+        output:
+          destination: dynamodb
+          content-type: application/json
 cloud:
   aws:
     credentials:
-      accesskey: # ACCESS KEY
-      secretkey: # SECRET KEY
+      accesskey: ${AWS_ACCESS_KEY}
+      secretkey: ${AWS_SECRET_KEY}
+      profile-name: ${AWS_PROFILE}
     region:
       static: us-west-2
     stack:
@@ -20,4 +20,4 @@ logging:
   level:
     io.nbugash.titan: DEBUG
 server:
-  port: 9000
+  port: 8080

@@ -1,0 +1,1 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=io.nbugash.titan.core.utility.S3Util,io.nbugash.titan.core.service.S3ServiceImpl

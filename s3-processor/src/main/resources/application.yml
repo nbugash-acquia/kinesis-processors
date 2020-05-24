@@ -8,17 +8,23 @@ spring:
         bindings:
           input:
             consumer:
-              shardIteratorType: TRIM_HORIZON
-      function:
-        bindings:
-          input:
-            destination: # Kinesis In stream
-            content-type: text/plain
+              shardIteratorType: LATEST
+      bindings:
+        input:
+          destination: s3
+          content-type: application/json
+        output:
+          destination: redshift
+          content-type: application/json
 cloud:
   aws:
+    s3:
+      bucket:
+        name: titan-s3-bucket
     credentials:
-      accesskey: # ACCESS KEY
-      secretkey: # SECRET KEY
+      accesskey: ${AWS_ACCESS_KEY}
+      secretkey: ${AWS_SECRET_KEY}
+      profile-name: ${AWS_PROFILE}
     region:
       static: us-west-2
     stack:
